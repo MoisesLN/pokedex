@@ -1,0 +1,71 @@
+main {
+    background-image: linear-gradient(to bottom left, var(--gray-900), var(--gray-950) 70%);
+    display: flex;
+    justify-content: center;
+    padding: 5em 2em;
+    flex-wrap: wrap;
+    gap: 2em;
+    height: 100%;
+    overflow-y: scroll;
+}
+.card {
+    width: 400px;
+    height: 250px;
+    box-shadow: 0 0 8px 0px black;
+    border-radius: 1em;
+    position: relative;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.id{
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    text-align: right;
+    font-size: 12px;
+    color: black;
+}
+
+.card .name {
+    font-size: 1.75em;
+}
+
+.card .info {
+    display: flex;
+}
+
+.card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: .5em;
+    > * {
+        width: 90px;
+        height: 30px;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+    }
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+}
+
+.red .card {
+    background-color: var(--red-800);
+}
+
+.tags .grass {
+    background-image: linear-gradient(to top, var(--green-700), var(--green-400));
+}
+
+.tags .poison {
+    background-image: linear-gradient(to top, var(--purple-800), var(--purple-600));
+}

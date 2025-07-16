@@ -1,0 +1,51 @@
+@import url('colors.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5em 1em;
+        height: 65px;
+        border-bottom: 1px solid black;
+        font-size: 1.2em;
+        font-weight: 500;  
+        
+        .pokeicon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .75em;
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .searchs {
+        height: 35px;
+    }   
+}
+.red header {
+    background-color: var(--red-800);
+}
