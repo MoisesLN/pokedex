@@ -43,6 +43,57 @@ header {
                 height: 40px;
             }
         }
+
+        .searchbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2em;
+            border-radius: 1000px; 
+            box-shadow: 0 0 2px 1px var(--gray-950); 
+
+            .bi-search {
+                padding: .25em;
+                padding-left: .5em;
+                transition: 0.2s ease;
+                display: flex;
+                align-items: center;
+            }
+
+            input {
+                height: 100%;
+                width: 200px;
+                border-radius: 1000px;
+                padding: .5em;
+                border: NONE;
+                outline: none;
+                transition: 0.2s ease;
+            }   
+            .bi-arrow-right{
+                border-top-right-radius: 2em;
+                border-bottom-right-radius: 2em;
+                cursor: pointer;
+                width: 0;
+                font-size: 0px;
+                display: flex;
+                align-items: flex-start;
+                padding: .5em;
+                padding-left: .25em;
+                transition: 0.2s ease;
+            }
+        }
+
+        .searchbar:has(input:focus) {
+            & .bi-search {
+                width: 0%;
+                font-size: 0;
+            }
+            & .bi-arrow-right {
+                width: 1.5em;
+                font-size: 1em;
+            }
+        }
+
         .themes {
             display: flex;
             gap: .5em;
@@ -93,4 +144,40 @@ header {
 
 .leaf header {
     background-color: var(--green-700);
+}
+
+.fire header .icons .searchbar {
+    background-color: var(--red-800);
+    
+    input:focus {
+        border: 1px solid var(--red-900);
+        width: 232px;
+    }
+    .bi-arrow-right {
+        background-color: var(--red-800);
+    }
+}
+
+.water header .icons .searchbar {
+    background-color: var(--blue-800);
+    
+    input:focus {
+        border: 1px solid var(--blue-900);
+        width: 232px;
+    }
+    .bi-arrow-right {
+        background-color: var(--blue-800);
+    }
+}
+
+.leaf header .icons .searchbar {
+    background-color: var(--green-800);
+    
+    input:focus {
+        border: 1px solid var(--green-900);
+        width: 232px;
+    }
+    .bi-arrow-right {
+        background-color: var(--green-800);
+    }
 }
