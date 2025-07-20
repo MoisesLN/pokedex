@@ -55,8 +55,24 @@ header {
                 &:hover {
                     color: var(--gray-300);
                 }
-                &.active {
-                    color: var(--gray-50);
+                &.bi-fire:hover {
+                    color: var(--red-400);
+                }
+                &.bi-droplet-fill:hover {
+                    color: var(--blue-400);
+                }
+                &.bi-leaf-fill:hover {
+                    color: var(--green-400);
+                }
+
+                &.bi-fire.active {
+                    color: var(--red-400);
+                }
+                &.bi-droplet-fill.active {
+                    color: var(--blue-400);
+                }
+                &.bi-leaf-fill.active {
+                    color: var(--green-400);
                 }
             }
         }
