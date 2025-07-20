@@ -83,7 +83,7 @@ header {
             }
         }
 
-        .searchbar:has(input:focus) {
+        .searchbar:has(input:not(:placeholder-shown)) {
             & .bi-search {
                 width: 0%;
                 font-size: 0;
@@ -91,6 +91,9 @@ header {
             & .bi-arrow-right {
                 width: 1.5em;
                 font-size: 1em;
+            }
+            & input {
+                width: 232px;
             }
         }
 
