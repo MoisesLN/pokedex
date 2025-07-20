@@ -56,6 +56,7 @@ async function getData(endpoint) {
 }
 
 async function loadPokemons(){
+    container.innerHTML = '';
     for(let i = 1; i < 650; i++){
         let EP = url + i
         data = await getData(EP)

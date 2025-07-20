@@ -154,7 +154,6 @@ header {
     
     input:focus {
         border: 1px solid var(--red-900);
-        width: 232px;
     }
     .bi-arrow-right {
         background-color: var(--red-800);
@@ -166,7 +165,6 @@ header {
     
     input:focus {
         border: 1px solid var(--blue-900);
-        width: 232px;
     }
     .bi-arrow-right {
         background-color: var(--blue-800);
@@ -178,9 +176,49 @@ header {
     
     input:focus {
         border: 1px solid var(--green-900);
-        width: 232px;
     }
     .bi-arrow-right {
         background-color: var(--green-800);
+    }
+}
+
+@media (max-width: 650px){
+    header {
+        .icons{ 
+            padding: 0.25em .5em;
+            .pokeicon {
+                gap: .25em;
+                cursor: pointer;
+                p {
+                    font-size: 0;
+                }
+                svg {
+                    width: 2.5em;
+                }
+            }
+            .searchbar input {
+                width: 125px;
+            }
+            .searchbar input:focus {
+                width: 150px;
+            }
+            .searchbar .bi-search {
+                display: none;
+            }
+            .searchbar:has(input:not(:placeholder-shown)) {
+                & .bi-arrow-right {
+                    width: 1.5em;
+                    font-size: 1em;
+                }
+                & input {
+                    width: calc(150px - 1.5em);
+                }
+            }
+            .themes {
+                gap: .2em; 
+                margin-right: 0;
+            }
+        }
+        
     }
 }
