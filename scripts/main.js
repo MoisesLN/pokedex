@@ -10,7 +10,6 @@ console.log(ENDPOINT);
 
 let promise = fetch(ENDPOINT);
 // console.log(promise)
-
 // promise
 //     .then(res => {
 //         console.log(res)

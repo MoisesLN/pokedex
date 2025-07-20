@@ -10,6 +10,7 @@ main {
     margin-bottom: 1em;
 }
 .card {
+    transition: background-color 0.2s ease-out;
     flex-basis: 400px;
     flex-grow: 1;
     height: 250px;
@@ -60,8 +61,16 @@ main {
     height: 120px;
 }
 
-.red .card {
+.fire .card {
     background-color: var(--red-800);
+}
+
+.water .card {
+    background-color: var(--blue-800);
+}
+
+.leaf .card {
+    background-color: var(--green-700);
 }
 
 .tags .grass {
