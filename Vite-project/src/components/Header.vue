@@ -53,12 +53,15 @@ export default {
             <div class="themes" id="themes">
                 <i class="bi bi-fire"
                     @click="setTheme('fire')"
+                    :class="{active: activeTheme === 'fire'}"
                 ></i>
                 <i class="bi bi-droplet-fill"
                     @click="setTheme('water')"
+                    :class="{active: activeTheme === 'water'}"
                 ></i>
                 <i class="bi bi-leaf-fill"
                     @click="setTheme('leaf')"
+                    :class="{active: activeTheme === 'leaf'}"
                 ></i>
             </div>
         </div>

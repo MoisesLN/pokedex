@@ -13,9 +13,13 @@ export default {
     },
 
     mounted() {
+        const pokeArray = []
         for(let i=1; i<650; i++) {
             let EP = url + i;
-            axios.get(EP).then(response => {
+            pokeArray.push(axios.get(EP));
+        }
+        Promise.all(pokeArray).then(orderedArray => {
+            orderedArray.forEach( response => {
                 const pokeData = response.data
                 let typesList = []
                 pokeData.types.forEach(type => {
@@ -30,16 +34,16 @@ export default {
                 }
                 console.log(pokeData.name);
                 console.log(poke);
-                
-
                 this.pokemons.push(poke);
 
             })
-        }
-        console.log(this.pokemons);
+        }).catch(error => {
+            console.error("Failed to load Pokémon:", error);
+        })
+        // axios.get(EP).then(response => {
+        // })
     },
 }
-// import 
 </script>
 
 <template>

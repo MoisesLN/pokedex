@@ -9,11 +9,17 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    height: 100%;
     color: white;
+    
+    overflow: hidden;
+}
+
+#app {
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 main {
     height: 100%;
     background-image: linear-gradient(to bottom left, var(--gray-900), var(--gray-950) 70%);
@@ -24,6 +30,8 @@ main {
     gap: 2em;
     height: 100%;
     overflow-y: auto;
+    scrollbar-color: var(--gray-500) rgba(0, 0, 0, 1);    
+    scrollbar-width: 4px;
 }
 .card {
     transition: background-color 0.2s ease-out;
@@ -49,6 +57,9 @@ main {
 
 .card .name {
     font-size: 1.75em;
+    &::first-letter {
+        text-transform: uppercase;
+    }
 }
 
 .card .info {
