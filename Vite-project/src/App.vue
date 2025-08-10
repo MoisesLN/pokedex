@@ -7,13 +7,25 @@
     components: {
       Header,
       pokecontainer
-    }
+    },
+    data() {
+      return {
+        search: '',
+        type: 'all'
+      }
+    },
   }
 </script>
 
 <template>
-  <Header></Header>
-  <pokecontainer></pokecontainer>
+  <Header
+    :search="search"
+    :type="type"
+    @update:search="search = $event"
+    @update:type="type = $event"></Header>
+  <pokecontainer
+    :search="search"
+    :type="type"></pokecontainer>
   <!-- <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />

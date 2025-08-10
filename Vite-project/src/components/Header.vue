@@ -1,5 +1,9 @@
 <script>
 export default {
+    props: {
+        search: String,
+        type: String
+    },
     mounted() {
         const savedTheme = localStorage.getItem('theme') || 'fire';
         this.setTheme(savedTheme);
@@ -10,6 +14,12 @@ export default {
             document.body.classList.add(newTheme);
             localStorage.setItem('theme', newTheme);
             this.activeTheme = newTheme;
+        },
+        onSearchInput(e) {
+            this.$emit('update:search', e.target.value)
+        },
+        onTypeChange(e) {
+            this.$emit('update:type', e.target.value)
         }
     },
 
@@ -47,7 +57,13 @@ export default {
             </div>
             <div class="searchbar">
                 <label for="search"><i class="bi bi-search"></i></label>
-                <input type="text" name="search" id="search" placeholder="ID ou nome">
+                <input 
+                    type="text" 
+                    name="search" 
+                    id="search" 
+                    placeholder="ID ou nome"
+                    @input="onSearchInput"
+                >
                 <i class="bi bi-arrow-right" id="arrow"></i>
             </div>
             <div class="themes" id="themes">
@@ -66,7 +82,8 @@ export default {
             </div>
         </div>
         <div class="type-search">
-            <select name="typeSort" id="typesort" class="typeSort">
+            <select name="typeSort" id="typesort" class="typeSort"
+                @change="onTypeChange">
                 <option value="all" class="type">Todos</option>
                 <option value="normal" class="normal">Normal</option>
                 <option value="fire" class="fire">Fire</option>

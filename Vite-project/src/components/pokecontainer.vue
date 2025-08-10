@@ -3,6 +3,10 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 import pokemon from './pokemon.vue';
 
 export default {
+    props: {
+        search: String,
+        type: String
+    },
     components: {
         pokemon
     },
@@ -11,7 +15,24 @@ export default {
              pokemons: []
         }
     },
-
+    computed: {
+        filteredPokemons() {
+            return this.pokemons.filter(poke => {
+                // Nome ou id
+                const matchesSearch = 
+                    !this.search || 
+                    poke.name.includes(this.search.toLowerCase()) ||
+                    poke.id.toString() == this.search;
+                
+                // Tipo
+                const matchesType =
+                    this.type === "all" ||
+                    poke.typesList.includes(this.type);
+                
+                return matchesSearch && matchesType;
+            })
+        }
+    },
     mounted() {
         const pokeArray = []
         for(let i=1; i<650; i++) {
@@ -49,7 +70,7 @@ export default {
 <template>
     <main>
         <pokemon 
-            v-for="poke in pokemons"
+            v-for="poke in filteredPokemons"
             :key="poke.id"
             :id="poke.id"
             :name="poke.name"
