@@ -9,7 +9,7 @@ export default {
         this.setTheme(savedTheme);
     },
     methods: {
-        setTheme(newTheme){
+        setTheme(newTheme) {
             document.body.classList.remove('fire', 'water', 'leaf');
             document.body.classList.add(newTheme);
             localStorage.setItem('theme', newTheme);
@@ -57,33 +57,17 @@ export default {
             </div>
             <div class="searchbar">
                 <label for="search"><i class="bi bi-search"></i></label>
-                <input 
-                    type="text" 
-                    name="search" 
-                    id="search" 
-                    placeholder="ID ou nome"
-                    @input="onSearchInput"
-                >
+                <input type="text" name="search" id="search" placeholder="ID ou nome" @input="onSearchInput">
                 <i class="bi bi-arrow-right" id="arrow"></i>
             </div>
             <div class="themes" id="themes">
-                <i class="bi bi-fire"
-                    @click="setTheme('fire')"
-                    :class="{active: activeTheme === 'fire'}"
-                ></i>
-                <i class="bi bi-droplet-fill"
-                    @click="setTheme('water')"
-                    :class="{active: activeTheme === 'water'}"
-                ></i>
-                <i class="bi bi-leaf-fill"
-                    @click="setTheme('leaf')"
-                    :class="{active: activeTheme === 'leaf'}"
-                ></i>
+                <i class="bi bi-fire" @click="setTheme('fire')" :class="{ active: activeTheme === 'fire' }"></i>
+                <i class="bi bi-droplet-fill" @click="setTheme('water')" :class="{ active: activeTheme === 'water' }"></i>
+                <i class="bi bi-leaf-fill" @click="setTheme('leaf')" :class="{ active: activeTheme === 'leaf' }"></i>
             </div>
         </div>
         <div class="type-search">
-            <select name="typeSort" id="typesort" class="typeSort"
-                @change="onTypeChange">
+            <select name="typeSort" id="typesort" class="typeSort" @change="onTypeChange">
                 <option value="all" class="type">Todos</option>
                 <option value="normal" class="normal">Normal</option>
                 <option value="fire" class="fire">Fire</option>
@@ -109,17 +93,17 @@ export default {
 </template>
 
 <style>
-    .cls-1 {
-        fill: #010101;
-    }
+.cls-1 {
+    fill: #010101;
+}
 
-    .cls-2 {
-        fill: #fff;
-    }
+.cls-2 {
+    fill: #fff;
+}
 
-    .cls-3 {
-        fill: #eb2127;
-    }
+.cls-3 {
+    fill: #eb2127;
+}
 
 header {
     width: 100%;

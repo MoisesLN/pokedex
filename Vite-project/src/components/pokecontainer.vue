@@ -39,7 +39,7 @@ export default {
             let EP = url + i;
             pokeArray.push(axios.get(EP));
         }
-        Promise.all(pokeArray).then(orderedArray => {
+        Promise.all(pokeArray).then(orderedArray => { // Código simplificado
             orderedArray.forEach( response => {
                 const pokeData = response.data
                 let typesList = []
@@ -61,8 +61,6 @@ export default {
         }).catch(error => {
             console.error("Failed to load Pokémon:", error);
         })
-        // axios.get(EP).then(response => {
-        // })
     },
 }
 </script>

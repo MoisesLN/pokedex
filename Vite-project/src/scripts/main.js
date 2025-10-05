@@ -19,6 +19,8 @@
 </div> 
 */
 
+
+// SCRIPT INUSADO; o código js do fetch está em pokecontainer.vue
 document.addEventListener("DOMContentLoaded", () => {
     let container = document.getElementById('container')
     
